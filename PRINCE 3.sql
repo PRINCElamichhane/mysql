@@ -3,11 +3,11 @@ USE shop;
 
 create table items (
     id_nf char (8) NOT NULL,
-    id_item char (20) NOT nulL,
-    COD_PROD  char (10) not NULL,
-    varlor varchar (70) NOT NULL ,
-    QUANTIDADE  char (76) NOT nULL ,
-    DISCOUNT char (76) NOT nULL 
+    id_item char (20) NOT NULL,
+    COD_PROD  char (10) NOT NULL,
+    varlor decimal (5,2) NOT NULL ,
+    QUANTIDADE  char (76) NOT NULL ,
+    DISCOUNT char (76) NOT NULL 
 );
  INSERT INTO items ( id_nf, id_item,COD_PROD,varlor, QUANTIDADE,DISCOUNT)  VALUES
 	(4, 1, 5, 30.00, 10, 15), 
