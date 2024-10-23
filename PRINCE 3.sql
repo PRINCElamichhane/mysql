@@ -1,7 +1,7 @@
 CREATE database shop;
 USE shop;
 
-items	create table items (
+create table items (
     id_nf char (8) NOT NULL,
     id_item char (20) NOT nulL,
     COD_PROD  char (10) not NULL,
