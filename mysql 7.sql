@@ -32,6 +32,15 @@ insert into clinentes values
 (3, "prince lamichhaner 3","porto" ,915587,3),
 (4, "lami prince","ktm" ,915587,4);
 
-SELECT funcionario.nome, funcionario.id_funcionario
-FROM funcionario
+SELECT * FROM funcionario
 INNER JOIN clinentes ON funcionario.id_funcionario = clinentes.id_funcionario;
+
+SELECT *FROM funcionario
+CROSS JOIN clinentes;
+ 
+ select  * from funcionario 
+ left outer join  clinentes ON funcionario.id_funcionario = clinentes.id_funcionario ;
+ 
+ select * from funcionario
+ right outer join clinentes ON funcionario.id_funcionario = clinentes.id_funcionario;
+ 
