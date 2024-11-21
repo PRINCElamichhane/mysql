@@ -57,9 +57,9 @@ CROSS JOIN movie;
  select * from actors
  right  join movie ON movie.id_movie = actors.id_actors ;
   
- select * from actors
-order by movie.id_movie asc;
+SELECT * FROM actors 
+JOIN movie ON actors.id_movie = movie.id_movie
+ORDER BY movie.id_movie ASC;
 
-drop database theater ;
-drop tables movie,actors,categories ;
+
 
