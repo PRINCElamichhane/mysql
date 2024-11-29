@@ -69,7 +69,51 @@ INSERT INTO estaciona (cod, estacionamento_num, veiculo_matricula, dataentrada, 
 (2, 102, 'B', '2024-11-03', '2020-03-20', '09:00:00', '19:00:00'),
 (3, 103, 'C', '2024-11-05', '2023-12-31', '10:00:00', '20:00:00');
 
+#A
+SELECT veiculo.matricula, cliente.nome
+FROM veiculo
+JOIN cliente ON veiculo.cliente_NIF = cliente.NIF;
 
+#B
+SELECT cliente.NIF, cliente.nome
+FROM veiculo
+JOIN cliente ON veiculo.cliente_NIF = cliente.NIF
+WHERE veiculo.matricula = '21-FC-41';
+
+#C
+SELECT veiculo.matricula
+FROM estaciona
+JOIN veiculo ON estaciona.veiculo_matricula = veiculo.matricula
+WHERE estaciona.cod = 1;
+
+#D
+SELECT veiculo.matricula, YEAR(estaciona.dataentrada) AS year
+FROM estaciona
+JOIN veiculo ON estaciona.veiculo_matricula = veiculo.matricula
+WHERE estaciona.cod = 1;
+
+#E
+SELECT estaciona.dataentrada, estaciona.datasaida
+FROM estaciona
+WHERE estaciona.veiculo_matricula = '70-20-ZH';
+
+#F
+SELECT cliente.nome
+FROM veiculo
+JOIN cliente ON veiculo.cliente_NIF = cliente.NIF
+WHERE veiculo.modelo_codmod = 1;
+
+#G
+SELECT estaciona.veiculo_matricula, estaciona.horaentrada, estaciona.horasaida
+FROM estaciona
+WHERE veiculo_matricula LIKE '%S%';
+
+#H
+SELECT cliente.nome
+FROM estaciona
+JOIN veiculo ON estaciona.veiculo_matricula = veiculo.matricula
+JOIN cliente ON veiculo.cliente_NIF = cliente.NIF
+WHERE estaciona.estacionamento_num = 2;
 
 
 
