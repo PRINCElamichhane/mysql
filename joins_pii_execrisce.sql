@@ -69,51 +69,61 @@ INSERT INTO estaciona (cod, estacionamento_num, veiculo_matricula, dataentrada, 
 (2, 102, 'B', '2024-11-03', '2020-03-20', '09:00:00', '19:00:00'),
 (3, 103, 'C', '2024-11-05', '2023-12-31', '10:00:00', '20:00:00');
 
+select * from  cliente,estaciona,estacionamento,modelo,veiculo;
+
 #A
-SELECT veiculo.matricula, cliente.nome
-FROM veiculo
-JOIN cliente ON veiculo.cliente_NIF = cliente.NIF;
+select veiculo.matricula, cliente.nome
+from veiculo
+join cliente 
+on veiculo.cliente_NIF = cliente.NIF;
 
 #B
-SELECT cliente.NIF, cliente.nome
-FROM veiculo
-JOIN cliente ON veiculo.cliente_NIF = cliente.NIF
-WHERE veiculo.matricula = '21-FC-41';
+select cliente.NIF, cliente.nome
+from veiculo
+join cliente on veiculo.cliente_NIF = cliente.NIF
+where veiculo.matricula = '21-FC-41';
 
 #C
-SELECT veiculo.matricula
-FROM estaciona
-JOIN veiculo ON estaciona.veiculo_matricula = veiculo.matricula
-WHERE estaciona.cod = 1;
+select veiculo.matricula
+from estaciona
+join veiculo on estaciona.veiculo_matricula = veiculo.matricula
+where estaciona.cod = 1;
 
 #D
-SELECT veiculo.matricula, YEAR(estaciona.dataentrada) AS year
-FROM estaciona
-JOIN veiculo ON estaciona.veiculo_matricula = veiculo.matricula
-WHERE estaciona.cod = 1;
+select veiculo.matricula, year (estaciona.dataentrada) as year
+from estaciona
+join veiculo on estaciona.veiculo_matricula = veiculo.matricula
+where estaciona.cod = 1;
 
 #E
-SELECT estaciona.dataentrada, estaciona.datasaida
-FROM estaciona
-WHERE estaciona.veiculo_matricula = '70-20-ZH';
+select estaciona.dataentrada, estaciona.datasaida
+from estaciona
+where estaciona.veiculo_matricula = '70-20-ZH';
 
 #F
-SELECT cliente.nome
-FROM veiculo
-JOIN cliente ON veiculo.cliente_NIF = cliente.NIF
-WHERE veiculo.modelo_codmod = 1;
+select cliente.nome
+from veiculo
+join cliente on veiculo.cliente_NIF = cliente.NIF
+where veiculo.modelo_codmod = 1;
 
 #G
-SELECT estaciona.veiculo_matricula, estaciona.horaentrada, estaciona.horasaida
-FROM estaciona
-WHERE veiculo_matricula LIKE '%S%';
+select estaciona.veiculo_matricula, estaciona.horaentrada, estaciona.horasaida
+from estaciona
+where veiculo_matricula like '%S%';
 
 #H
-SELECT cliente.nome
-FROM estaciona
-JOIN veiculo ON estaciona.veiculo_matricula = veiculo.matricula
-JOIN cliente ON veiculo.cliente_NIF = cliente.NIF
-WHERE estaciona.estacionamento_num = 2;
+select cliente.nome
+from estaciona
+join veiculo on estaciona.veiculo_matricula = veiculo.matricula
+join cliente on veiculo.cliente_NIF = cliente.NIF
+where estaciona.estacionamento_num = 2;
+
+#I 
+select cliente.NIF
+from estaciona
+join veiculo on estaciona.veiculo_matricula = veiculo_matricula
+join cliente on veiculo.cliente_NIF = cliente_NIF
+where estaciona.estacionamento_num = 3;
 
 
 
