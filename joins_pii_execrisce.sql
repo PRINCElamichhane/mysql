@@ -41,3 +41,30 @@ CREATE TABLE estaciona (
     FOREIGN KEY (estacionamento_num) REFERENCES estacionamento(num),
     FOREIGN KEY (veiculo_matricula) REFERENCES veiculo(matricula)
 );
+INSERT INTO modelo (codmod, nome, marca) VALUES 
+(1, 'evil', 'nike'),
+(2, 'Model 34', 'doona'),
+(3, 'rola', 'tata');
+
+
+INSERT INTO cliente (NIF, nome, dtnasc) VALUES 
+(12345, 'prince', '1975-09-12'),
+(23456, 'boka kto', '1996-06-20'),
+(34567, 'baba', '1980-01-15');
+
+
+INSERT INTO veiculo (matricula, modelo_codmod, cliente_NIF) VALUES 
+('A', 1, 12345),
+('B', 2, 23456),
+('C', 3, 34567);
+
+INSERT INTO estacionamento (num, piso, capacidade) VALUES 
+(101, 1, 50),
+(102, 2, 60),
+(103, 3, 70);
+
+
+INSERT INTO estaciona (cod, estacionamento_num, veiculo_matricula, dataentrada, datasaida, horaentrada, horasaida) VALUES 
+(1, 101, 'A', '2024-11-01', '2011-11-11', '08:00:00', '18:00:00'),
+(2, 102, 'B', '2024-11-03', '2020-03-20', '09:00:00', '19:00:00'),
+(3, 103, 'C', '2024-11-05', '2023-12-31', '10:00:00', '20:00:00');
