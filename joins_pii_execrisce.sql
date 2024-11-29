@@ -43,7 +43,7 @@ CREATE TABLE estaciona (
 );
 INSERT INTO modelo (codmod, nome, marca) VALUES 
 (1, 'evil', 'nike'),
-(2, 'Model 34', 'doona'),
+(2, 'Mod 34', 'doona'),
 (3, 'rola', 'tata');
 
 
