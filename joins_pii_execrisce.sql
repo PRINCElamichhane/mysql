@@ -133,7 +133,7 @@ JOIN modelo on veiculo.modelo_codmod = modelo.codmod
 where estaciona.estacionamento_num = 2;
  
  #k
-select matricula
+select veiculo.matricula
 from veiculo
 join cliente on veiculo.cliente_NIF = cliente.NIF
 join modelo on veiculo.modelo_codmod = modelo.codmod;
