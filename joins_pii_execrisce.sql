@@ -125,6 +125,18 @@ join veiculo on estaciona.veiculo_matricula = veiculo_matricula
 join cliente on veiculo.cliente_NIF = cliente_NIF
 where estaciona.estacionamento_num = 3;
 
+#J
+select modelo.nome 
+from estaciona
+join veiculo on estaciona.veiculo_matricula = veiculo.matricula
+JOIN modelo on veiculo.modelo_codmod = modelo.codmod
+where estaciona.estacionamento_num = 2;
+ 
+ #k
+select matricula
+from veiculo
+join cliente on veiculo.cliente_NIF = cliente.NIF
+join modelo on veiculo.modelo_codmod = modelo.codmod;
 
 
-drop database joins_pii_ex6;
+
